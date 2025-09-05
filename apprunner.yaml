@@ -1,0 +1,13 @@
+version: 1.0
+runtime: python3
+build:
+  commands:
+    build:
+      - pip install --no-cache-dir -r requirements.txt
+run:
+  command: python main.py
+  network:
+    port: 8080
+  env:
+    - name: FLASK_ENV
+      value: "production"
