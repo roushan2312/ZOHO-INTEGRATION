@@ -19,22 +19,6 @@ def health():
     return "OK", 200
 
 def handle_event(event):
-    # event_id = event["org_id"]
-    # stack_name = f"ZohoPluginCFN2-{event_id}"
-    # template_url = "https://cfn-temp-zoho-plugin.s3.ap-south-1.amazonaws.com/cfn2.yaml"
-    # params = [
-    #     {"ParameterKey": "CustomerTableName", "ParameterValue": f"Customer-{event_id}"},
-    #     {"ParameterKey": "InvoiceTableName", "ParameterValue": f"Invoice-{event_id}"},
-    #     {"ParameterKey": "SecretName", "ParameterValue": f"ZohoPluginSecret-{event_id}"},
-    #     {"ParameterKey": "ClientId", "ParameterValue": event["client_id"]},
-    #     {"ParameterKey": "ClientSecret", "ParameterValue": event["client_secret"]},
-    # ]
-    # response = cf.create_stack(
-    #     StackName=stack_name,
-    #     TemplateURL=template_url,
-    #     Parameters=params,
-    #     Capabilities=["CAPABILITY_NAMED_IAM"]
-    # )
     import requests
     client_id = "1000.DMZKLD5JA20XDVRL71F18K3BQAXUFJ"
     client_secret = "37cf537d6995959adb961a0b453695d9f194b47ed7"
