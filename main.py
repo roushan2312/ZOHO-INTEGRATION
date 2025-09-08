@@ -10,6 +10,7 @@ def handle_event_route():
     event = request.get_json()
     try:
         stack_id = handle_event(event)
+        print("Hi")
         return jsonify({"message": "Stack creation started", "stack_id": stack_id}), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500
@@ -34,6 +35,7 @@ def handle_event(event):
     response = requests.post(url, data=data)
     # Optionally, you can print or log the response
     print("Zoho token response:", response.text)
+    print("Hello")
     return response.text
 
 if __name__ == "__main__":
