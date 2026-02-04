@@ -5,12 +5,17 @@ build:
     build:
       - pip3 install --no-cache-dir -r requirements.txt
 run:
-  # PYTHONPATH=. ensures your app can see its own modules and libraries
+  # Added runtime-version to match AWS best practices for 3.11
+  runtime-version: 3.11
+  # Critical for Python 3.11: Ensures dependencies are visible to the app
+  pre-run:
+    - pip3 install --no-cache-dir -r requirements.txt
   command: python3 main.py
   network:
     port: 8080
   env:
     - name: FLASK_ENV
       value: "production"
+    # Added PYTHONPATH to the env section for cleaner execution
     - name: PYTHONPATH
       value: "."
