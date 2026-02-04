@@ -5,7 +5,8 @@ build:
     build:
       - pip3 install --no-cache-dir -r requirements.txt
 run:
-  command: python3 main.py
+  # PYTHONPATH=. ensures your app can see its own modules and libraries
+  command: PYTHONPATH=. python3 main.py
   network:
     port: 8080
   env:
