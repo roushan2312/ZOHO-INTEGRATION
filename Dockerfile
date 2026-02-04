@@ -1,3 +1,6 @@
+# Is this file mandatory to deploy the application in apprunner
+# We have added apprunner.yaml for the same purpose.
+
 # Use an official Python runtime as a parent image
 FROM python:3.8-slim
 
