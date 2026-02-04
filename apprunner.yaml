@@ -6,9 +6,11 @@ build:
       - pip3 install --no-cache-dir -r requirements.txt
 run:
   # PYTHONPATH=. ensures your app can see its own modules and libraries
-  command: PYTHONPATH=. python3 main.py
+  command: python3 main.py
   network:
     port: 8080
   env:
     - name: FLASK_ENV
       value: "production"
+    - name: PYTHONPATH
+      value: "."
